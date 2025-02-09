@@ -11,11 +11,11 @@ from datetime import datetime
 from geopy.geocoders import Nominatim
 
 # Load models and data
-xgb_model = joblib.load("/Model/xgb_model.pkl")
-le = joblib.load("/Model/label_encoder.pkl")
-scaler = joblib.load("/Model/scaler.pkl")
-hybrid_model = tf.keras.models.load_model("/Model/hybrid_model.h5")
-data = pd.read_csv("/Model/Final.csv").fillna(method='ffill')
+xgb_model = joblib.load("\Model\\xgb_model.pkl")
+le = joblib.load("Model/label_encoder.pkl")
+scaler = joblib.load("Model/scaler.pkl")
+hybrid_model = tf.keras.models.load_model("Model/hybrid_model.h5")
+data = pd.read_csv("Model/Final.csv").fillna(method='ffill')
 
 # Define constants and mappings
 price_cache = {}
@@ -593,7 +593,7 @@ features = [
     'soil_moisture', 'N', 'P', 'K', 'soil_pH', 'temperature',
     'humidity', 'rainfall', 'sunlight_hours', 'last_crop', 'land_size'
 ]
-data = pd.read_csv("Final.csv").fillna(method='ffill')
+data = pd.read_csv("Model/Final.csv").fillna(method='ffill')
 X = pd.get_dummies(data[features], columns=['last_crop'])
 # Function to fetch historical sunlight and temperature data
 async def fetch_historical_sunlight_temperature(latitude, longitude):
