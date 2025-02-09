@@ -11,11 +11,11 @@ from datetime import datetime
 from geopy.geocoders import Nominatim
 
 # Load models and data
-xgb_model = joblib.load("xgb_model.pkl")
-le = joblib.load("label_encoder.pkl")
-scaler = joblib.load("scaler.pkl")
-hybrid_model = tf.keras.models.load_model("hybrid_model.h5")
-data = pd.read_csv("Final.csv").fillna(method='ffill')
+xgb_model = joblib.load("/Model/xgb_model.pkl")
+le = joblib.load("/Model/label_encoder.pkl")
+scaler = joblib.load("/Model/scaler.pkl")
+hybrid_model = tf.keras.models.load_model("/Model/hybrid_model.h5")
+data = pd.read_csv("/Model/Final.csv").fillna(method='ffill')
 
 # Define constants and mappings
 price_cache = {}
